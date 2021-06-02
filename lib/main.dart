@@ -1,9 +1,15 @@
 import 'package:auto_mobile_app/core/routes/router.dart';
-import 'package:auto_mobile_app/presentation/main/pages/main_screen.dart';
+import 'package:auto_mobile_app/core/utils/hive/hive_init.dart';
+import 'package:auto_mobile_app/presentation/choice/pages/choice_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await initHiveBoxes();
+
   runApp(MyApp());
 }
 
@@ -24,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: (settings) => AutoRouter.generateRoute(settings),
-      home: MainScreen(),
+      home: ChoiceScreen(),
     );
   }
 }

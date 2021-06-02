@@ -2,18 +2,19 @@ import 'package:auto_mobile_app/presentation/profile/widgets/info_item_widget.da
 import 'package:flutter/cupertino.dart';
 import 'package:auto_mobile_app/core/consts/color_consts.dart';
 import 'package:auto_mobile_app/core/consts/text_style_consts.dart';
+import 'package:auto_mobile_app/core/routes/routes_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class SellerProfileScreen extends StatefulWidget {
+  const SellerProfileScreen({Key? key}) : super(key: key);
 
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _SellerProfileScreenState createState() => _SellerProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _SellerProfileScreenState extends State<SellerProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -216,7 +217,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               InfoItemWidget('assets/icons/box.svg', 'Работа с регионами', onPressed: () {print('Работа!');}),
               InfoItemWidget('assets/icons/support.svg', 'Техническая поддержка', onPressed: () {print('Техн.!');}),
-              InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');}),
+              InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');
+                Navigator.pushReplacementNamed(context, AuthRoute);}),
               Divider(color: GreyColor, height: 0),
               SizedBox(height: 32),
               Container(
