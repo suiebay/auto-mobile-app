@@ -1,7 +1,8 @@
 import 'package:auto_mobile_app/core/routes/routes_const.dart';
 import 'package:auto_mobile_app/presentation/chat/pages/chat_screen.dart';
+import 'package:auto_mobile_app/presentation/choice/pages/choice_screen.dart';
 import 'package:auto_mobile_app/presentation/main/pages/main_screen.dart';
-import 'package:auto_mobile_app/presentation/profile/pages/profile_screen.dart';
+import 'package:auto_mobile_app/presentation/profile/pages/seller_profile_screen.dart';
 import 'package:auto_mobile_app/presentation/request/pages/request_screen.dart';
 import 'package:auto_mobile_app/presentation/selection/pages/selection_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -36,6 +37,11 @@ class AutoRouter {
         return CupertinoPageRoute(
           settings: routeSettings,
           builder: (_) => ProfileScreen(),
+        );
+      case AuthRoute:
+        return CupertinoPageRoute(
+          settings: routeSettings,
+          builder: (_) => ChoiceScreen(),
         );
       default:
         return CupertinoPageRoute(
