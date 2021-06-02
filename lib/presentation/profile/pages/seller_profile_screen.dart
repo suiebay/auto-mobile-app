@@ -1,9 +1,11 @@
+import 'package:auto_mobile_app/logic/user/bloc/contacts_bloc.dart';
 import 'package:auto_mobile_app/presentation/profile/widgets/info_item_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_mobile_app/core/consts/color_consts.dart';
 import 'package:auto_mobile_app/core/consts/text_style_consts.dart';
 import 'package:auto_mobile_app/core/routes/routes_const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -17,6 +19,16 @@ class SellerProfileScreen extends StatefulWidget {
 class _SellerProfileScreenState extends State<SellerProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    return BlocConsumer<UsersBloc, UsersState>(
+      listener: (context, state) {
+        if (state is UsersLoading)
+          print('Users loading');
+        if (state is UsersSuccess)
+          print('Users uploaded');
+        if (state is UsersFailure)
+          print('Users failure');
+      },
+  builder: (context, state) {
     return Scaffold(
       backgroundColor: WhiteColor,
       appBar: AppBar(
@@ -39,7 +51,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
 
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-          child: Column(
+          child: state is UsersSuccess ? Column(
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -69,6 +81,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                     ),
                     Column(
                       children: [
+                        SizedBox(height: 16),
                         CircleAvatar(
                           backgroundImage: AssetImage('assets/images/avatarS.png'),
                           backgroundColor: GreyColor,
@@ -77,12 +90,12 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Text(
-                            'Магазин Автозапчастей',
+                            state.user.name!,
                             style: BoldStyle.copyWith(fontSize: 20),
                           ),
                         ),
                         Text(
-                          '8 (777) 777 77 77',
+                          state.user.phone!,
                           style: MediumStyle.copyWith(color: BlackGreyColor),
                         ),
                         SizedBox(height: 8),
@@ -198,9 +211,9 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
               ),
               SizedBox(height: 16),
               InfoItemWidget('assets/icons/location.svg', 'Регион',
-                  onPressed: () {print('Регион!');}, subtitle: 'Алматы'),
-              InfoItemWidget('assets/icons/shop.svg', 'Адрес магазина',
-                  onPressed: () {print('Адрес!');}, subtitle: 'Пр. Назарбаева, 223'),
+                onPressed: () {print('Регион!');}, subtitle: 'Алматы'),
+              InfoItemWidget('assets/icons/shop.svg', 'Адрес магазина', onPressed: () {print('Адрес!');},
+                subtitle: '${state.user.address!.city}, ${state.user.address!.suite}'),
               InfoItemWidget('assets/icons/clock.svg', 'График работы', onPressed: () {print('График!');}),
               InfoItemWidget('assets/icons/history.svg', 'История заказов', onPressed: () {print('История!');}),
               InfoItemWidget('assets/icons/statistics.svg', 'Статистика', onPressed: () {print('Статы!');}),
@@ -298,9 +311,15 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                 ),
               )
             ],
-          ),
+          ) : state is UsersLoading
+              ? Center(child: CupertinoActivityIndicator())
+              : state is UsersFailure
+              ? Center(child: Text(state.message))
+              : Offstage(),
         ),
       ),
     );
+  },
+);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:auto_mobile_app/core/injection_container.dart';
 import 'package:auto_mobile_app/core/routes/router.dart';
 import 'package:auto_mobile_app/core/utils/hive/hive_init.dart';
 import 'package:auto_mobile_app/presentation/choice/pages/choice_screen.dart';
@@ -10,13 +11,14 @@ void main() async {
   await Hive.initFlutter();
   await initHiveBoxes();
 
+  setupInjections();
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       systemNavigationBarIconBrightness: Brightness.light,
       statusBarIconBrightness: Brightness.light,
