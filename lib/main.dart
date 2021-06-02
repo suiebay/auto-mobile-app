@@ -1,5 +1,5 @@
 import 'package:auto_mobile_app/core/routes/router.dart';
-import 'package:auto_mobile_app/presentation/main/pages/main_screen.dart';
+import 'package:auto_mobile_app/presentation/choice/pages/choice_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: (settings) => AutoRouter.generateRoute(settings),
-      home: MainScreen(),
+      home: ChoiceScreen(),
     );
   }
 }

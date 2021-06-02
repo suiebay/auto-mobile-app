@@ -5,7 +5,7 @@ import 'package:auto_mobile_app/core/consts/text_style_consts.dart';
 import 'package:auto_mobile_app/presentation/request/pages/request_screen.dart';
 import 'package:auto_mobile_app/presentation/selection/pages/selection_screen.dart';
 import 'package:auto_mobile_app/presentation/chat/pages/chat_screen.dart';
-import 'package:auto_mobile_app/presentation/profile/pages/profile_screen.dart';
+import 'package:auto_mobile_app/presentation/profile/pages/seller_profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   @override

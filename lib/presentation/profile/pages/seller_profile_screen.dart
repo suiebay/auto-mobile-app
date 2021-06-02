@@ -2,6 +2,7 @@ import 'package:auto_mobile_app/presentation/profile/widgets/info_item_widget.da
 import 'package:flutter/cupertino.dart';
 import 'package:auto_mobile_app/core/consts/color_consts.dart';
 import 'package:auto_mobile_app/core/consts/text_style_consts.dart';
+import 'package:auto_mobile_app/core/routes/routes_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -214,7 +215,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               InfoItemWidget('assets/icons/box.svg', 'Работа с регионами', onPressed: () {print('Работа!');}),
               InfoItemWidget('assets/icons/support.svg', 'Техническая поддержка', onPressed: () {print('Техн.!');}),
-              InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');}),
+              InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');
+                Navigator.pushReplacementNamed(context, AuthRoute);}),
               Divider(color: GreyColor, height: 0),
               SizedBox(height: 32),
               Container(
