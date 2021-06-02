@@ -1,6 +1,7 @@
 # auto_mobile_app
 
-A new Flutter project.
+Run this command before build:
+`flutter packages pub run build_runner build --delete-conflicting-outputs`
 
 ## Getting Started
 
