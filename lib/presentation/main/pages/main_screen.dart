@@ -5,7 +5,9 @@ import 'package:auto_mobile_app/core/consts/text_style_consts.dart';
 import 'package:auto_mobile_app/presentation/request/pages/request_screen.dart';
 import 'package:auto_mobile_app/presentation/selection/pages/selection_screen.dart';
 import 'package:auto_mobile_app/presentation/chat/pages/chat_screen.dart';
+import 'package:auto_mobile_app/presentation/profile/pages/courier_profile_screen.dart';
 import 'package:auto_mobile_app/presentation/profile/pages/seller_profile_screen.dart';
+import 'package:hive/hive.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -13,11 +15,19 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final List<Widget> _bodyWidgets = [
+  bool isSeller = Hive.box('user').get('role') == 'Seller';
+
+  final List<Widget> _sellerWidgets = [
     RequestScreen(),
     SelectionScreen(),
     ChatScreen(),
-    ProfileScreen()
+    SellerProfileScreen()
+  ];
+
+  final List<Widget> _courierWidgets = [
+    RequestScreen(),
+    ChatScreen(),
+    CourierProfileScreen()
   ];
 
   int _currentView = 0;
@@ -26,7 +36,8 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: WhiteColor,
-      body: _bodyWidgets.elementAt(_currentView),
+      body: isSeller ? _sellerWidgets.elementAt(_currentView)
+          : _courierWidgets.elementAt(_currentView),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: WhiteGreyColor,
@@ -46,22 +57,23 @@ class _MainScreenState extends State<MainScreen> {
               _currentView = index;
             });
           },
-          selectedItemColor: BlueColor,
+          selectedItemColor: isSeller ? BlueColor : RedColor,
           currentIndex: _currentView,
           type: BottomNavigationBarType.fixed,
           selectedFontSize: 12,
           unselectedFontSize: 12,
           selectedLabelStyle: RegularStyle.copyWith(fontSize: 12),
           unselectedLabelStyle: RegularStyle.copyWith(fontSize: 12),
-          items: const <BottomNavigationBarItem>[
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: ImageIcon(AssetImage("assets/images/request.png"),),
               label: 'Заявки',
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage("assets/images/selection.png"),),
-              label: 'Мои подборки',
-            ),
+            if(isSeller)
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage("assets/images/selection.png"),),
+                label: 'Мои подборки',
+              ),
             BottomNavigationBarItem(
               icon: ImageIcon(AssetImage("assets/images/chat.png"),),
               label: 'Чат',

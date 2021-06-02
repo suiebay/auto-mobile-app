@@ -2,11 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:auto_mobile_app/core/consts/color_consts.dart';
 import 'package:auto_mobile_app/core/consts/text_style_consts.dart';
 import 'package:auto_mobile_app/core/routes/routes_const.dart';
+import 'package:hive/hive.dart';
 
+// ignore: must_be_immutable
 class ButtonWidget extends StatelessWidget {
   final title;
   final color;
-  const ButtonWidget(this.title, this.color, {Key? key}) : super(key: key);
+
+  ButtonWidget(this.title, this.color, {Key? key}) : super(key: key);
+
+  Box box = Hive.box('user');
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +28,10 @@ class ButtonWidget extends StatelessWidget {
         ),
       ),
       onPressed: () {
+        if(title == 'Seller')
+          box.put('role', 'Seller');
+        else
+          box.put('role', 'Courier');
         Navigator.pushReplacementNamed(context, MainRoute);
       },
     );

@@ -6,21 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class CourierProfileScreen extends StatefulWidget {
+  const CourierProfileScreen({Key? key}) : super(key: key);
 
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _CourierProfileScreenState createState() => _CourierProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _CourierProfileScreenState extends State<CourierProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: WhiteColor,
       appBar: AppBar(
         title: Text(
-          'Профиль Продовца',
+          'Профиль Курьера',
           style: BoldStyle.copyWith(fontSize: 20),
         ),
         backgroundColor: WhiteColor,
@@ -69,14 +69,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Column(
                       children: [
                         CircleAvatar(
-                          backgroundImage: AssetImage('assets/images/avatarS.png'),
+                          backgroundImage: AssetImage('assets/images/Artem.png'),
                           backgroundColor: GreyColor,
                           radius: 62.5,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Text(
-                            'Магазин Автозапчастей',
+                            'Артем Лебедев',
                             style: BoldStyle.copyWith(fontSize: 20),
                           ),
                         ),
@@ -89,7 +89,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RatingBarIndicator(
-                              rating: 2.75,
+                              rating: 4.75,
                               itemBuilder: (context, index) => Icon(
                                 Icons.star,
                                 color: Color(0xFFFFD600),
@@ -196,12 +196,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               SizedBox(height: 16),
+              InfoItemWidget('assets/icons/location.svg', 'Статус', onPressed: () {print('Проверенный!');}),
               InfoItemWidget('assets/icons/location.svg', 'Регион', onPressed: () {print('Регион!');}),
-              InfoItemWidget('assets/icons/shop.svg', 'Адрес магазина', onPressed: () {print('Адрес!');}),
-              InfoItemWidget('assets/icons/clock.svg', 'График работы', onPressed: () {print('График!');}),
               InfoItemWidget('assets/icons/history.svg', 'История заказов', onPressed: () {print('История!');}),
-              InfoItemWidget('assets/icons/statistics.svg', 'Статистика', onPressed: () {print('Статы!');}),
-              InfoItemWidget('assets/icons/document.svg', 'Регистрация магазина', onPressed: () {print('Рег!');}),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Align(
@@ -212,7 +209,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
-              InfoItemWidget('assets/icons/box.svg', 'Работа с регионами', onPressed: () {print('Работа!');}),
               InfoItemWidget('assets/icons/support.svg', 'Техническая поддержка', onPressed: () {print('Техн.!');}),
               InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');}),
               Divider(color: GreyColor, height: 0),
@@ -274,19 +270,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(25),
                                 border: Border.all(
-                                    color: RedColor,
+                                    color: BlueColor,
                                     width: 2
                                 )
                             ),
                             child: Center(
                               child: Text(
-                                'Стать курьером',
-                                style: BoldStyle.copyWith(color: RedColor),
+                                'Стать продовцом',
+                                style: BoldStyle.copyWith(color: BlueColor),
                               ),
                             ),
                           ),
                           onPressed: () {
-                            print('Стать курьером!');
+                            print('Стать продовцом!');
                           },
                         ),
                       ]
