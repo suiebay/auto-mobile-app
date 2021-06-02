@@ -41,7 +41,8 @@ class _InfoItemWidgetState extends State<InfoItemWidget> {
                 Spacer(),
                 widget.subtitle != null ? Text(
                   widget.subtitle,
-                  style: MediumStyle,
+                  style: MediumStyle.copyWith(color: widget.subtitle == 'Проверенный'
+                      ? GreenColor : BlackColor),
                 ) : Offstage(),
                 Icon(
                   Icons.arrow_right,

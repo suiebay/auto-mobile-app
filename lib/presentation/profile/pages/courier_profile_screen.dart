@@ -5,6 +5,7 @@ import 'package:auto_mobile_app/core/consts/text_style_consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:auto_mobile_app/core/routes/routes_const.dart';
 
 class CourierProfileScreen extends StatefulWidget {
   const CourierProfileScreen({Key? key}) : super(key: key);
@@ -196,7 +197,8 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                 ),
               ),
               SizedBox(height: 16),
-              InfoItemWidget('assets/icons/location.svg', 'Статус', onPressed: () {print('Проверенный!');}),
+              InfoItemWidget('assets/icons/location.svg', 'Статус',
+                onPressed: () {print('Проверенный!');}, subtitle: 'Проверенный',),
               InfoItemWidget('assets/icons/location.svg', 'Регион', onPressed: () {print('Регион!');}),
               InfoItemWidget('assets/icons/history.svg', 'История заказов', onPressed: () {print('История!');}),
               Padding(
@@ -210,7 +212,8 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                 ),
               ),
               InfoItemWidget('assets/icons/support.svg', 'Техническая поддержка', onPressed: () {print('Техн.!');}),
-              InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');}),
+              InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');
+                  Navigator.pushReplacementNamed(context, AuthRoute);}),
               Divider(color: GreyColor, height: 0),
               SizedBox(height: 32),
               Container(
