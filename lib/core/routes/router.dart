@@ -1,4 +1,6 @@
+import 'package:auto_mobile_app/core/injection_container.dart';
 import 'package:auto_mobile_app/core/routes/routes_const.dart';
+import 'package:auto_mobile_app/logic/user/bloc/contacts_bloc.dart';
 import 'package:auto_mobile_app/presentation/chat/pages/chat_screen.dart';
 import 'package:auto_mobile_app/presentation/choice/pages/choice_screen.dart';
 import 'package:auto_mobile_app/presentation/main/pages/main_screen.dart';
@@ -8,6 +10,7 @@ import 'package:auto_mobile_app/presentation/request/pages/request_screen.dart';
 import 'package:auto_mobile_app/presentation/selection/pages/selection_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 
 class AutoRouter {
@@ -19,7 +22,12 @@ class AutoRouter {
       case MainRoute:
         return CupertinoPageRoute(
           settings: routeSettings,
-          builder: (_) => MainScreen(),
+          builder: (_) =>
+              BlocProvider<UsersBloc>(
+                create: (context) => getIt()..add(
+                    UsersLoaded(routeSettings.arguments)),
+                child: MainScreen(),
+              ),
         );
       case RequestRoute:
         return CupertinoPageRoute(
@@ -39,7 +47,8 @@ class AutoRouter {
       case ProfileRoute:
         return CupertinoPageRoute(
           settings: routeSettings,
-          builder: (_) => box.get('role') == 'Seller'
+          builder: (_) =>
+          box.get('role') == 'Seller'
               ? SellerProfileScreen() : CourierProfileScreen(),
         );
       case AuthRoute:
@@ -50,14 +59,15 @@ class AutoRouter {
       default:
         return CupertinoPageRoute(
           settings: routeSettings,
-          builder: (_) => CupertinoPageScaffold(
-            child: Center(
-              child: Text(
-                'Ошибка, роут для ${routeSettings.name} не найден',
-                textAlign: TextAlign.center,
+          builder: (_) =>
+              CupertinoPageScaffold(
+                child: Center(
+                  child: Text(
+                    'Ошибка, роут для ${routeSettings.name} не найден',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
-            ),
-          ),
         );
     }
   }
