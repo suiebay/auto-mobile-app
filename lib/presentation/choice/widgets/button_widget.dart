@@ -4,6 +4,7 @@ import 'package:auto_mobile_app/core/consts/text_style_consts.dart';
 import 'package:auto_mobile_app/core/routes/routes_const.dart';
 import 'package:hive/hive.dart';
 
+
 // ignore: must_be_immutable
 class ButtonWidget extends StatelessWidget {
   final title;
@@ -32,7 +33,7 @@ class ButtonWidget extends StatelessWidget {
           box.put('role', 'Seller');
         else
           box.put('role', 'Courier');
-        Navigator.pushReplacementNamed(context, MainRoute);
+        Navigator.pushReplacementNamed(context, MainRoute, arguments: title == 'Seller' ? 1 : 2);
       },
     );
   }
