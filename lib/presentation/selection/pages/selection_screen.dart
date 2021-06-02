@@ -15,7 +15,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       color: WhiteColor,
-      child: Center(child: Text('ReadsScreen')),
+      child: Center(child: Text('SelectionScreen')),
     );
   }
 }

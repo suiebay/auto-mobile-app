@@ -15,7 +15,7 @@ class _RequestScreenState extends State<RequestScreen> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       color: WhiteColor,
-      child: Center(child: Text('HomeScreen')),
+      child: Center(child: Text('RequestScreen')),
     );
   }
 }
