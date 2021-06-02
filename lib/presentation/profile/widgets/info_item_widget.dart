@@ -36,12 +36,12 @@ class _InfoItemWidgetState extends State<InfoItemWidget> {
                 SizedBox(width: 16),
                 Text(
                   widget.title,
-                  style: RegularStyle,
+                  style: AutoStyles.regularStyle,
                 ),
                 Spacer(),
                 widget.subtitle != null ? Text(
                   widget.subtitle,
-                  style: MediumStyle.copyWith(color: widget.subtitle == 'Проверенный'
+                  style: AutoStyles.mediumStyle.copyWith(color: widget.subtitle == 'Проверенный'
                       ? AutoColors.greenColor : AutoColors.blackColor),
                 ) : Offstage(),
                 Icon(

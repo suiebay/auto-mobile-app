@@ -62,8 +62,8 @@ class _MainScreenState extends State<MainScreen> {
           type: BottomNavigationBarType.fixed,
           selectedFontSize: 12,
           unselectedFontSize: 12,
-          selectedLabelStyle: RegularStyle.copyWith(fontSize: 12),
-          unselectedLabelStyle: RegularStyle.copyWith(fontSize: 12),
+          selectedLabelStyle: AutoStyles.regularStyle.copyWith(fontSize: 12),
+          unselectedLabelStyle: AutoStyles.regularStyle.copyWith(fontSize: 12),
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: ImageIcon(AssetImage("assets/images/request.png"),),

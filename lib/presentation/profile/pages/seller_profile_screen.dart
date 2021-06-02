@@ -34,7 +34,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
       appBar: AppBar(
         title: Text(
           'Профиль Продовца',
-          style: BoldStyle.copyWith(fontSize: 20),
+          style: AutoStyles.boldStyle.copyWith(fontSize: 20),
         ),
         backgroundColor: AutoColors.whiteColor,
         actions: [
@@ -91,12 +91,12 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Text(
                             state.user.name!,
-                            style: BoldStyle.copyWith(fontSize: 20),
+                            style: AutoStyles.boldStyle.copyWith(fontSize: 20),
                           ),
                         ),
                         Text(
                           state.user.phone!,
-                          style: MediumStyle.copyWith(color: AutoColors.blackGreyColor),
+                          style: AutoStyles.mediumStyle.copyWith(color: AutoColors.blackGreyColor),
                         ),
                         SizedBox(height: 8),
                         Row(
@@ -114,7 +114,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                             SizedBox(width: 5),
                             Text(
                               '(126)',
-                              style: RegularStyle.copyWith(fontSize: 14),
+                              style: AutoStyles.regularStyle.copyWith(fontSize: 14),
                             ),
                           ],
                         ),
@@ -124,12 +124,12 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                             SizedBox(width: 28),
                             Text(
                               'Баланс:',
-                              style: RegularStyle.copyWith(fontSize: 14),
+                              style: AutoStyles.regularStyle.copyWith(fontSize: 14),
                             ),
                             SizedBox(width: 7),
                             Text(
                               '800',
-                              style: BoldStyle
+                              style: AutoStyles.boldStyle
                             ),
                             Spacer(),
                             CupertinoButton(
@@ -144,7 +144,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                                 child: Center(
                                   child: Text(
                                     'Пополнить',
-                                    style: RegularStyle.copyWith(color: AutoColors.whiteColor, fontSize: 14),
+                                    style: AutoStyles.regularStyle.copyWith(color: AutoColors.whiteColor, fontSize: 14),
                                   ),
                                 ),
                               ),
@@ -177,7 +177,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                             SizedBox(width: 28),
                             Text(
                               'Подписка до:\n15.12.2020',
-                              style: RegularStyle.copyWith(fontSize: 14),
+                              style: AutoStyles.regularStyle.copyWith(fontSize: 14),
                             ),
                             Spacer(),
                             CupertinoButton(
@@ -192,7 +192,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                                   child: Center(
                                     child: Text(
                                       'Продлить',
-                                      style: RegularStyle.copyWith(color: AutoColors.whiteColor, fontSize: 14),
+                                      style: AutoStyles.regularStyle.copyWith(color: AutoColors.whiteColor, fontSize: 14),
                                     ),
                                   ),
                                 ),
@@ -224,7 +224,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Дополнительно',
-                    style: RegularStyle.copyWith(fontSize: 12, color: AutoColors.blackGreyColor),
+                    style: AutoStyles.regularStyle.copyWith(fontSize: 12, color: AutoColors.blackGreyColor),
                   ),
                 ),
               ),
@@ -258,7 +258,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                     children: [
                       Text(
                           'Изменить Режим',
-                          style: RegularStyle
+                          style: AutoStyles.regularStyle
                       ),
                       SizedBox(height: 16),
                       CupertinoButton(
@@ -275,7 +275,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                           child: Center(
                             child: Text(
                               'Стать покупателем',
-                              style: BoldStyle.copyWith(color: AutoColors.orangeColor),
+                              style: AutoStyles.boldStyle.copyWith(color: AutoColors.orangeColor),
                             ),
                           ),
                         ),
@@ -298,7 +298,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                           child: Center(
                             child: Text(
                               'Стать курьером',
-                              style: BoldStyle.copyWith(color: AutoColors.redColor),
+                              style: AutoStyles.boldStyle.copyWith(color: AutoColors.redColor),
                             ),
                           ),
                         ),
