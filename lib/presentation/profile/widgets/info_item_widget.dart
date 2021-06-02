@@ -8,8 +8,9 @@ class InfoItemWidget extends StatefulWidget {
   final imgUrl;
   final title;
   final Function() onPressed;
+  final subtitle;
 
-  const InfoItemWidget(this.imgUrl, this.title, {Key? key, required this.onPressed}) : super(key: key);
+  const InfoItemWidget(this.imgUrl, this.title, {Key? key, required this.onPressed, this.subtitle}) : super(key: key);
 
   @override
   _InfoItemWidgetState createState() => _InfoItemWidgetState();
@@ -22,6 +23,7 @@ class _InfoItemWidgetState extends State<InfoItemWidget> {
       children: [
         Divider(color: GreyColor, height: 0,),
         MaterialButton(
+          padding: EdgeInsets.zero,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Row(
@@ -37,10 +39,10 @@ class _InfoItemWidgetState extends State<InfoItemWidget> {
                   style: RegularStyle,
                 ),
                 Spacer(),
-                Text(
-                  'Алматы',
+                widget.subtitle != null ? Text(
+                  widget.subtitle,
                   style: MediumStyle,
-                ),
+                ) : Offstage(),
                 Icon(
                   Icons.arrow_right,
                   color: GreyColor,
