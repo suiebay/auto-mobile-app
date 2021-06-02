@@ -10,14 +10,14 @@ class ChoiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: WhiteColor,
+      backgroundColor: AutoColors.whiteColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ButtonWidget('Seller', RedColor),
+            ButtonWidget('Seller', AutoColors.redColor),
             SizedBox(height: 16),
-            ButtonWidget('Courier', OrangeColor),
+            ButtonWidget('Courier', AutoColors.orangeColor),
           ],
         ),
       ),

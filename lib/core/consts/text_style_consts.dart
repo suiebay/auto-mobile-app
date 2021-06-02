@@ -5,20 +5,20 @@ import 'color_consts.dart';
 const TextStyle BoldStyle = const TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w700,
-  color: BlackColor,
+  color: AutoColors.blackColor,
   fontFamily: 'SFPro'
 );
 
 const TextStyle MediumStyle = const TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w500,
-  color: BlackColor,
+  color: AutoColors.blackColor,
   fontFamily: 'SFPro',
 );
 
 const TextStyle RegularStyle = const TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w400,
-  color: BlackColor,
+  color: AutoColors.blackColor,
   fontFamily: 'SFPro'
 );

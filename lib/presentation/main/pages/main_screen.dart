@@ -35,12 +35,12 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: WhiteColor,
+      backgroundColor: AutoColors.whiteColor,
       body: isSeller ? _sellerWidgets.elementAt(_currentView)
           : _courierWidgets.elementAt(_currentView),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: WhiteGreyColor,
+          color: AutoColors.whiteGreyColor,
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
@@ -51,13 +51,13 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
         child: BottomNavigationBar(
-          backgroundColor: WhiteGreyColor,
+          backgroundColor: AutoColors.whiteGreyColor,
           onTap: (int index) {
             setState(() {
               _currentView = index;
             });
           },
-          selectedItemColor: isSeller ? BlueColor : RedColor,
+          selectedItemColor: isSeller ? AutoColors.blueColor : AutoColors.redColor,
           currentIndex: _currentView,
           type: BottomNavigationBarType.fixed,
           selectedFontSize: 12,

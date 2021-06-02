@@ -30,16 +30,16 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
       },
   builder: (context, state) {
     return Scaffold(
-      backgroundColor: WhiteColor,
+      backgroundColor: AutoColors.whiteColor,
       appBar: AppBar(
         title: Text(
           'Профиль Продовца',
           style: BoldStyle.copyWith(fontSize: 20),
         ),
-        backgroundColor: WhiteColor,
+        backgroundColor: AutoColors.whiteColor,
         actions: [
           CupertinoButton(
-            child: SvgPicture.asset('assets/icons/drawer.svg', color: BlackColor,),
+            child: SvgPicture.asset('assets/icons/drawer.svg', color: AutoColors.blackColor,),
             onPressed: () {
               print('Drawer!');
             }
@@ -56,11 +56,11 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: WhiteColor,
+                  color: AutoColors.whiteColor,
                   borderRadius: BorderRadius.circular(25),
                   boxShadow: [
                     BoxShadow(
-                      color: GreyColor.withOpacity(0.5),
+                      color: AutoColors.greyColor.withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 2,
                       offset: Offset(0, 2), // changes position of shadow
@@ -84,7 +84,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                         SizedBox(height: 16),
                         CircleAvatar(
                           backgroundImage: AssetImage('assets/images/avatarS.png'),
-                          backgroundColor: GreyColor,
+                          backgroundColor: AutoColors.greyColor,
                           radius: 62.5,
                         ),
                         Padding(
@@ -96,7 +96,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                         ),
                         Text(
                           state.user.phone!,
-                          style: MediumStyle.copyWith(color: BlackGreyColor),
+                          style: MediumStyle.copyWith(color: AutoColors.blackGreyColor),
                         ),
                         SizedBox(height: 8),
                         Row(
@@ -139,12 +139,12 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                                 height: 35,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(25),
-                                  color: GreenColor
+                                  color: AutoColors.greenColor
                                 ),
                                 child: Center(
                                   child: Text(
                                     'Пополнить',
-                                    style: RegularStyle.copyWith(color: WhiteColor, fontSize: 14),
+                                    style: RegularStyle.copyWith(color: AutoColors.whiteColor, fontSize: 14),
                                   ),
                                 ),
                               ),
@@ -160,10 +160,10 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                           child: Container(
                             height: 1.0,
                             decoration: BoxDecoration(
-                              color: GreyColor,
+                              color: AutoColors.greyColor,
                               boxShadow: [
                                 BoxShadow(
-                                  color: GreyColor.withOpacity(0.4),
+                                  color: AutoColors.greyColor.withOpacity(0.4),
                                   spreadRadius: 0.2,
                                   blurRadius: 1,
                                   offset: Offset(0, 2.5), // changes position of shadow
@@ -187,12 +187,12 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                                   height: 35,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(25),
-                                      color: BlueColor
+                                      color: AutoColors.blueColor
                                   ),
                                   child: Center(
                                     child: Text(
                                       'Продлить',
-                                      style: RegularStyle.copyWith(color: WhiteColor, fontSize: 14),
+                                      style: RegularStyle.copyWith(color: AutoColors.whiteColor, fontSize: 14),
                                     ),
                                   ),
                                 ),
@@ -224,7 +224,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Дополнительно',
-                    style: RegularStyle.copyWith(fontSize: 12, color: BlackGreyColor),
+                    style: RegularStyle.copyWith(fontSize: 12, color: AutoColors.blackGreyColor),
                   ),
                 ),
               ),
@@ -232,13 +232,13 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
               InfoItemWidget('assets/icons/support.svg', 'Техническая поддержка', onPressed: () {print('Техн.!');}),
               InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');
                 Navigator.pushReplacementNamed(context, AuthRoute);}),
-              Divider(color: GreyColor, height: 0),
+              Divider(color: AutoColors.greyColor, height: 0),
               SizedBox(height: 32),
               Container(
                 height: 192,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: WhiteColor,
+                  color: AutoColors.whiteColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25)
@@ -268,14 +268,14 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
                             border: Border.all(
-                              color: OrangeColor,
+                              color: AutoColors.orangeColor,
                               width: 2
                             )
                           ),
                           child: Center(
                             child: Text(
                               'Стать покупателем',
-                              style: BoldStyle.copyWith(color: OrangeColor),
+                              style: BoldStyle.copyWith(color: AutoColors.orangeColor),
                             ),
                           ),
                         ),
@@ -291,14 +291,14 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
                               border: Border.all(
-                                  color: RedColor,
+                                  color: AutoColors.redColor,
                                   width: 2
                               )
                           ),
                           child: Center(
                             child: Text(
                               'Стать курьером',
-                              style: BoldStyle.copyWith(color: RedColor),
+                              style: BoldStyle.copyWith(color: AutoColors.redColor),
                             ),
                           ),
                         ),

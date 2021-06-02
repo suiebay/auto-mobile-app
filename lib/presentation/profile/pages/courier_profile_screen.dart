@@ -30,17 +30,17 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
       },
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: WhiteColor,
+          backgroundColor: AutoColors.whiteColor,
           appBar: AppBar(
             title: Text(
               'Профиль Курьера',
               style: BoldStyle.copyWith(fontSize: 20),
             ),
-            backgroundColor: WhiteColor,
+            backgroundColor: AutoColors.whiteColor,
             actions: [
               CupertinoButton(
                   child: SvgPicture.asset(
-                    'assets/icons/drawer.svg', color: BlackColor,),
+                    'assets/icons/drawer.svg', color: AutoColors.blackColor,),
                   onPressed: () {
                     print('Drawer!');
                   }
@@ -56,11 +56,11 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                      color: WhiteColor,
+                      color: AutoColors.whiteColor,
                       borderRadius: BorderRadius.circular(25),
                       boxShadow: [
                         BoxShadow(
-                          color: GreyColor.withOpacity(0.5),
+                          color: AutoColors.greyColor.withOpacity(0.5),
                           spreadRadius: 1,
                           blurRadius: 2,
                           offset: Offset(0, 2), // changes position of shadow
@@ -84,7 +84,7 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                             SizedBox(height: 16),
                             CircleAvatar(
                               backgroundImage: AssetImage('assets/images/Artem.png'),
-                              backgroundColor: GreyColor,
+                              backgroundColor: AutoColors.greyColor,
                               radius: 62.5,
                             ),
                             Padding(
@@ -96,7 +96,7 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                             ),
                             Text(
                               state.user.phone!,
-                              style: MediumStyle.copyWith(color: BlackGreyColor),
+                              style: MediumStyle.copyWith(color: AutoColors.blackGreyColor),
                             ),
                             SizedBox(height: 8),
                             Row(
@@ -140,12 +140,12 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                                       height: 35,
                                       decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(25),
-                                          color: GreenColor
+                                          color: AutoColors.greenColor
                                       ),
                                       child: Center(
                                         child: Text(
                                           'Пополнить',
-                                          style: RegularStyle.copyWith(color: WhiteColor, fontSize: 14),
+                                          style: RegularStyle.copyWith(color: AutoColors.whiteColor, fontSize: 14),
                                         ),
                                       ),
                                     ),
@@ -161,10 +161,10 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                                 child: Container(
                                   height: 1.0,
                                   decoration: BoxDecoration(
-                                    color: GreyColor,
+                                    color: AutoColors.greyColor,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: GreyColor.withOpacity(0.4),
+                                        color: AutoColors.greyColor.withOpacity(0.4),
                                         spreadRadius: 0.2,
                                         blurRadius: 1,
                                         offset: Offset(0, 2.5), // changes position of shadow
@@ -188,12 +188,12 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                                       height: 35,
                                       decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(25),
-                                          color: BlueColor
+                                          color: AutoColors.blueColor
                                       ),
                                       child: Center(
                                         child: Text(
                                           'Продлить',
-                                          style: RegularStyle.copyWith(color: WhiteColor, fontSize: 14),
+                                          style: RegularStyle.copyWith(color: AutoColors.whiteColor, fontSize: 14),
                                         ),
                                       ),
                                     ),
@@ -223,7 +223,7 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Дополнительно',
-                        style: RegularStyle.copyWith(fontSize: 12, color: BlackGreyColor),
+                        style: RegularStyle.copyWith(fontSize: 12, color: AutoColors.blackGreyColor),
                       ),
                     ),
                   ),
@@ -233,13 +233,13 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                     print('Выход!');
                     Navigator.pushReplacementNamed(context, AuthRoute);
                   }),
-                  Divider(color: GreyColor, height: 0),
+                  Divider(color: AutoColors.greyColor, height: 0),
                   SizedBox(height: 32),
                   Container(
                     height: 192,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                      color: WhiteColor,
+                      color: AutoColors.whiteColor,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25),
                           topRight: Radius.circular(25)
@@ -269,14 +269,14 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(25),
                                     border: Border.all(
-                                        color: OrangeColor,
+                                        color: AutoColors.orangeColor,
                                         width: 2
                                     )
                                 ),
                                 child: Center(
                                   child: Text(
                                     'Стать покупателем',
-                                    style: BoldStyle.copyWith(color: OrangeColor),
+                                    style: BoldStyle.copyWith(color: AutoColors.orangeColor),
                                   ),
                                 ),
                               ),
@@ -292,14 +292,14 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(25),
                                     border: Border.all(
-                                      color: BlueColor,
+                                      color: AutoColors.blueColor,
                                       width: 2
                                     )
                                 ),
                                 child: Center(
                                   child: Text(
                                     'Стать продовцом',
-                                    style: BoldStyle.copyWith(color: BlueColor),
+                                    style: BoldStyle.copyWith(color: AutoColors.blueColor),
                                   ),
                                 ),
                               ),

@@ -21,7 +21,7 @@ class _InfoItemWidgetState extends State<InfoItemWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Divider(color: GreyColor, height: 0,),
+        Divider(color: AutoColors.greyColor, height: 0,),
         MaterialButton(
           padding: EdgeInsets.zero,
           child: Padding(
@@ -30,7 +30,7 @@ class _InfoItemWidgetState extends State<InfoItemWidget> {
               children: [
                 SvgPicture.asset(
                     widget.imgUrl,
-                    color: BlackGreyColor,
+                    color: AutoColors.blackGreyColor,
                     height: 16
                 ),
                 SizedBox(width: 16),
@@ -42,11 +42,11 @@ class _InfoItemWidgetState extends State<InfoItemWidget> {
                 widget.subtitle != null ? Text(
                   widget.subtitle,
                   style: MediumStyle.copyWith(color: widget.subtitle == 'Проверенный'
-                      ? GreenColor : BlackColor),
+                      ? AutoColors.greenColor : AutoColors.blackColor),
                 ) : Offstage(),
                 Icon(
                   Icons.arrow_right,
-                  color: GreyColor,
+                  color: AutoColors.greyColor,
                 )
               ],
             ),

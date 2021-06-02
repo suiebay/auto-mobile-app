@@ -24,7 +24,7 @@ class ButtonWidget extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: BoldStyle.copyWith(color: WhiteColor),
+            style: BoldStyle.copyWith(color: AutoColors.whiteColor),
           ),
         ),
       ),

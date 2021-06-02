@@ -14,7 +14,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      color: WhiteColor,
+      color: AutoColors.whiteColor,
       child: Center(child: Text('ChatScreen')),
     );
   }
