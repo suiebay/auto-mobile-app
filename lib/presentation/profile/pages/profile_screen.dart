@@ -34,6 +34,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
       body: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
           child: Column(
@@ -193,6 +195,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
               ),
+              SizedBox(height: 16),
               InfoItemWidget('assets/icons/location.svg', 'Регион', onPressed: () {print('Регион!');}),
               InfoItemWidget('assets/icons/shop.svg', 'Адрес магазина', onPressed: () {print('Адрес!');}),
               InfoItemWidget('assets/icons/clock.svg', 'График работы', onPressed: () {print('График!');}),
@@ -214,6 +217,82 @@ class _ProfileScreenState extends State<ProfileScreen> {
               InfoItemWidget('assets/icons/exit.svg', 'Выход', onPressed: () {print('Выход!');}),
               Divider(color: GreyColor, height: 0),
               SizedBox(height: 32),
+              Container(
+                height: 192,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: WhiteColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25)
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.3),
+                      spreadRadius: 1,
+                      blurRadius: 4,
+                      offset: Offset(0, -2), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(33, 16, 33, 25),
+                  child: Column(
+                    children: [
+                      Text(
+                          'Изменить Режим',
+                          style: RegularStyle
+                      ),
+                      SizedBox(height: 16),
+                      CupertinoButton(
+                        padding: EdgeInsets.zero,
+                        child: Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            border: Border.all(
+                              color: OrangeColor,
+                              width: 2
+                            )
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Стать покупателем',
+                              style: BoldStyle.copyWith(color: OrangeColor),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          print('Стать покупателем!');
+                        },
+                      ),
+                      SizedBox(height: 16),
+                      CupertinoButton(
+                        padding: EdgeInsets.zero,
+                        child: Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              border: Border.all(
+                                  color: RedColor,
+                                  width: 2
+                              )
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Стать курьером',
+                              style: BoldStyle.copyWith(color: RedColor),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          print('Стать курьером!');
+                        },
+                      ),
+                    ]
+                  ),
+                ),
+              )
             ],
           ),
         ),
