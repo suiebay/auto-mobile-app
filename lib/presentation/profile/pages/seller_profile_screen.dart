@@ -90,12 +90,12 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Text(
-                            state.user.name!,
+                            state.user.name,
                             style: AutoStyles.boldStyle.copyWith(fontSize: 20),
                           ),
                         ),
                         Text(
-                          state.user.phone!,
+                          state.user.phone,
                           style: AutoStyles.mediumStyle.copyWith(color: AutoColors.blackGreyColor),
                         ),
                         SizedBox(height: 8),
@@ -213,7 +213,7 @@ class _SellerProfileScreenState extends State<SellerProfileScreen> {
               InfoItemWidget('assets/icons/location.svg', 'Регион',
                 onPressed: () {print('Регион!');}, subtitle: 'Алматы'),
               InfoItemWidget('assets/icons/shop.svg', 'Адрес магазина', onPressed: () {print('Адрес!');},
-                subtitle: '${state.user.address!.city}, ${state.user.address!.suite}'),
+                subtitle: '${state.user.address.city}, ${state.user.address.suite}'),
               InfoItemWidget('assets/icons/clock.svg', 'График работы', onPressed: () {print('График!');}),
               InfoItemWidget('assets/icons/history.svg', 'История заказов', onPressed: () {print('История!');}),
               InfoItemWidget('assets/icons/statistics.svg', 'Статистика', onPressed: () {print('Статы!');}),

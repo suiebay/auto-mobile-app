@@ -90,12 +90,12 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 8.0),
                               child: Text(
-                                state.user.name!,
+                                state.user.name,
                                 style: AutoStyles.boldStyle.copyWith(fontSize: 20),
                               ),
                             ),
                             Text(
-                              state.user.phone!,
+                              state.user.phone,
                               style: AutoStyles.mediumStyle.copyWith(color: AutoColors.blackGreyColor),
                             ),
                             SizedBox(height: 8),
@@ -214,7 +214,7 @@ class _CourierProfileScreenState extends State<CourierProfileScreen> {
                   InfoItemWidget('assets/icons/location.svg', 'Статус',
                     onPressed: () {print('Проверенный!');}, subtitle: 'Проверенный',),
                   InfoItemWidget('assets/icons/location.svg', 'Регион', onPressed: () {print('Регион!');},
-                    subtitle: '${state.user.address!.city}, ${state.user.address!.suite}'),
+                    subtitle: '${state.user.address.city}, ${state.user.address.suite}'),
                   InfoItemWidget('assets/icons/history.svg', 'История заказов',
                     onPressed: () {print('История!');}),
                   Padding(
