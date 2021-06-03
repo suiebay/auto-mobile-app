@@ -1,6 +1,5 @@
 import 'package:auto_mobile_app/logic/user/data/models/lat_lng_model.dart';
 import 'package:auto_mobile_app/logic/user/domain/entities/address.dart';
-import 'package:auto_mobile_app/logic/user/domain/entities/lat_lng.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'address_model.g.dart';

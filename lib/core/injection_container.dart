@@ -5,6 +5,7 @@ import 'package:auto_mobile_app/logic/user/data/datasources/user_remote_datasour
 import 'package:auto_mobile_app/logic/user/data/repositories/users_repository_impl.dart';
 import 'package:auto_mobile_app/logic/user/domain/repositories/users_repository.dart';
 import 'package:auto_mobile_app/logic/user/domain/usecases/get_user.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
