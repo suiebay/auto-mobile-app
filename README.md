@@ -3,6 +3,8 @@
 Run this command before build:
 `flutter packages pub run build_runner build --delete-conflicting-outputs`
 
+Additional run args : `--no-sound-null-safety`
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
