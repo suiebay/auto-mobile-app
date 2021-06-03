@@ -1,5 +1,5 @@
-import 'package:auto_mobile_app/logic/user/data/models/user.dart';
-import 'package:auto_mobile_app/logic/user/data/repositories/contacts_repository.dart';
+import 'package:auto_mobile_app/logic/user/domain/entities/user.dart';
+import 'package:auto_mobile_app/logic/user/domain/repositories/users_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'contacts_bloc_state.dart';
@@ -15,8 +15,11 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
     if(event is UsersLoaded) {
       yield UsersLoading();
       try {
-        final User user = await usersRepository.getUsers(event.id);
-        yield UsersSuccess(user);
+        final user = await usersRepository.getUsers(event.id);
+        yield user.fold(
+            (failure) => UsersFailure(failure.toString()),
+            (user) => UsersSuccess(user)
+        );
       } on Exception catch (e) {
         yield UsersFailure(e.toString());
         throw (e);
