@@ -1,4 +1,4 @@
-import 'package:auto_mobile_app/logic/user/bloc/contacts_bloc.dart';
+import 'package:auto_mobile_app/logic/user/bloc/user_bloc.dart';
 import 'package:auto_mobile_app/presentation/profile/widgets/info_item_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_mobile_app/core/consts/color_consts.dart';

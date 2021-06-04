@@ -1,4 +1,4 @@
-part of 'contacts_bloc.dart';
+part of 'user_bloc.dart';
 
 abstract class UsersEvent {}
 

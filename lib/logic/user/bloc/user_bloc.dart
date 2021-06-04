@@ -2,8 +2,8 @@ import 'package:auto_mobile_app/logic/user/domain/entities/user.dart';
 import 'package:auto_mobile_app/logic/user/domain/usecases/get_user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'contacts_bloc_state.dart';
-part 'contacts_event.dart';
+part 'user_state.dart';
+part 'user_event.dart';
 
 class UsersBloc extends Bloc<UsersEvent, UsersState> {
   final GetUser getUser;

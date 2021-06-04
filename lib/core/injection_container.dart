@@ -1,6 +1,6 @@
 import 'package:auto_mobile_app/core/utils/dio/dio_interceptor.dart';
 import 'package:auto_mobile_app/core/utils/dio/dio_wrapper.dart';
-import 'package:auto_mobile_app/logic/user/bloc/contacts_bloc.dart';
+import 'package:auto_mobile_app/logic/user/bloc/user_bloc.dart';
 import 'package:auto_mobile_app/logic/user/data/datasources/user_remote_datasource.dart';
 import 'package:auto_mobile_app/logic/user/data/repositories/users_repository_impl.dart';
 import 'package:auto_mobile_app/logic/user/domain/repositories/users_repository.dart';

@@ -1,6 +1,6 @@
 import 'package:auto_mobile_app/core/injection_container.dart';
 import 'package:auto_mobile_app/core/routes/routes_const.dart';
-import 'package:auto_mobile_app/logic/user/bloc/contacts_bloc.dart';
+import 'package:auto_mobile_app/logic/user/bloc/user_bloc.dart';
 import 'package:auto_mobile_app/presentation/chat/pages/chat_screen.dart';
 import 'package:auto_mobile_app/presentation/choice/pages/choice_screen.dart';
 import 'package:auto_mobile_app/presentation/main/pages/main_screen.dart';
