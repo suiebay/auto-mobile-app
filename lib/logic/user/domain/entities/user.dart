@@ -17,5 +17,5 @@ class User extends Equatable{
   User(this.id, this.name, this.username, this.email, this.phone, this.website, this.address, this.company);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [id, name, username, email, phone, website, address, company];
 }

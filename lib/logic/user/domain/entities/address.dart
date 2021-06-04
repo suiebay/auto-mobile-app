@@ -14,5 +14,5 @@ class Address extends Equatable {
   Address(this.street, this.suite, this.city, this.zipcode, this.latLng);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [street, suite, city, zipcode, latLng];
 }

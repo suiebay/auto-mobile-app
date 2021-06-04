@@ -9,5 +9,5 @@ class LatLng extends Equatable{
   LatLng(this.lat, this.lng);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [lat, lng];
 }
