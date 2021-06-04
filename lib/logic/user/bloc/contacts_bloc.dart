@@ -1,5 +1,4 @@
 import 'package:auto_mobile_app/logic/user/domain/entities/user.dart';
-import 'package:auto_mobile_app/logic/user/domain/repositories/users_repository.dart';
 import 'package:auto_mobile_app/logic/user/domain/usecases/get_user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +15,7 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
     if(event is UsersLoaded) {
       yield UsersLoading();
       try {
-        final user = await getUser(Params(number: event.id));
+        final user = await getUser(GetUserInput(number: event.id));
         yield user.fold(
             (failure) => UsersFailure(failure.toString()),
             (user) => UsersSuccess(user)
